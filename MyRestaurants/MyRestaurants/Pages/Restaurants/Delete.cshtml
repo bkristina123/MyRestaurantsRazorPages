@@ -1,0 +1,18 @@
+﻿@page "{id:int?}"
+@model MyRestaurants.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+    <h1>Delete page</h1>
+    <div class="alert-danger">
+        Do you want to delete @Model.Restaurant.Name ?
+    </div>
+    <form method="post">
+        <button type="submit" asp-page="./Delete" asp-route-id="@Model.Restaurant.Id" class="btn btn-success">
+            Yes
+        </button>
+        <a asp-page="./List" class="btn btn-danger">
+            Cancel
+        </a>
+    </form>
